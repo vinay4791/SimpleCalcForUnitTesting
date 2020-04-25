@@ -101,7 +101,7 @@ public class CalculatorTest {
      */
 
     @After
-    public void makeNull() {
+    public void tearDown() {
         mCalculator = null;
     }
 
