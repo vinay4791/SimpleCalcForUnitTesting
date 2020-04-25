@@ -1,4 +1,4 @@
-package vinay.com.simplecalcforunittesting;
+package vinay.com.simplecalcforunittesting.utils;
 
 public class PositiveNumberValidator {
 

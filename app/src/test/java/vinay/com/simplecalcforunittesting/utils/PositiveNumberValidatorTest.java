@@ -1,8 +1,10 @@
-package vinay.com.simplecalcforunittesting;
+package vinay.com.simplecalcforunittesting.utils;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import vinay.com.simplecalcforunittesting.utils.PositiveNumberValidator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
