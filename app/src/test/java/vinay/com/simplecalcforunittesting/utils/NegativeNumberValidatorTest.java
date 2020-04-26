@@ -21,20 +21,20 @@ public class NegativeNumberValidatorTest {
     }
 
     @Test
-    public void isNegativeWithNegativeNumber() {
+    public void isNegative_withNegativeNumber() {
         boolean result = mNegativeNumberValidator.isNegative(-1);
         assertThat(result, is(true));
     }
 
     @Test
-    public void isNegativeWithPositiveNumber() {
+    public void isNegative_withPositiveNumber() {
         boolean result = mNegativeNumberValidator.isNegative(1);
         assertThat(result, is(false));
     }
 
 
     @Test
-    public void isNegativeWithZero() {
+    public void isNegative_withZero() {
         boolean result = mNegativeNumberValidator.isNegative(1);
         assertThat(result, is(false));
     }
