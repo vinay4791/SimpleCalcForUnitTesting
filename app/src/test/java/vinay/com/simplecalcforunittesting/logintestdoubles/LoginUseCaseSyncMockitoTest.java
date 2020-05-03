@@ -4,9 +4,12 @@ import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.internal.matchers.Any;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -25,22 +28,23 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LoginUseCaseSyncMockitoTest {
 
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String AUTH_TOKEN = "authToken";
 
-    LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
-    EventBusPoster mEventBusPosterMock;
-    AuthTokenCache mAuthTokenCacheMock;
-    LoginUseCaseSync mLoginUseCaseSync;
+    @Mock LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
+    @Mock EventBusPoster mEventBusPosterMock;
+    @Mock AuthTokenCache mAuthTokenCacheMock;
+    @Mock LoginUseCaseSync mLoginUseCaseSync;
 
     @Before
     public void setUp() throws Exception {
-        mLoginHttpEndpointSyncMock = Mockito.mock(LoginHttpEndpointSync.class);
+        /*mLoginHttpEndpointSyncMock = Mockito.mock(LoginHttpEndpointSync.class);
         mEventBusPosterMock = Mockito.mock(EventBusPoster.class);
-        mAuthTokenCacheMock = Mockito.mock(AuthTokenCache.class);
+        mAuthTokenCacheMock = Mockito.mock(AuthTokenCache.class);*/
         mLoginUseCaseSync = new LoginUseCaseSync(mLoginHttpEndpointSyncMock, mAuthTokenCacheMock, mEventBusPosterMock);
         success();
     }
