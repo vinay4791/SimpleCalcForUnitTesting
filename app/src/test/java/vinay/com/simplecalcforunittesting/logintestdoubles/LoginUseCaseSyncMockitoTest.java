@@ -109,9 +109,9 @@ public class LoginUseCaseSyncMockitoTest {
     @Test
     public void loginSync_serverError_loggedInEventPosted() {
         ArgumentCaptor<Object> ac = ArgumentCaptor.forClass(Object.class);
-        mLoginUseCaseSync.loginSync(USERNAME,PASSWORD);
+        mLoginUseCaseSync.loginSync(USERNAME, PASSWORD);
         verify(mEventBusPosterMock).postEvent(ac.capture());
-        assertThat(ac.getValue(),is(instanceOf(LoggedInEvent.class)));
+        assertThat(ac.getValue(), is(instanceOf(LoggedInEvent.class)));
 
     }
 
@@ -125,7 +125,8 @@ public class LoginUseCaseSyncMockitoTest {
 
     @Test
     public void loginSync_success_failureReturned() {
-
+        LoginUseCaseSync.UseCaseResult result = mLoginUseCaseSync.loginSync(USERNAME, PASSWORD);
+        assertThat(result, is(LoginUseCaseSync.UseCaseResult.SUCCESS));
     }
 
     //if login fails failreturned
